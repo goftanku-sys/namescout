@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f8fc">
+<title>Telegram Username Finder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">✳</span><span>name<span class="brand-muted">scout</span></span></a>
+    <div class="top-right"><span class="live-dot"></span><span id="apiStatus">Локальный режим</span><a class="tg-link" href="https://telegram.org/" target="_blank" rel="noreferrer">Telegram ↗</a></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span></span> TELEGRAM USERNAME LAB</div>
+      <h1>Твой следующий ник.<br><span>Уже где-то рядом.</span></h1>
+      <p>Генерируй тысячи идей, находи редкие сочетания и проверяй доступность в Telegram.</p>
+    </section>
+    <section class="workspace">
+      <aside class="panel controls">
+        <div class="panel-heading"><div><span class="step">01</span><h2>Настройки поиска</h2></div><span class="tiny-label">CUSTOMIZE</span></div>
+        <label class="field-label" for="style">Стиль имени</label>
+        <select id="style">
+          <option value="aesthetic">Эстетичные</option><option value="minimal">Минималистичные</option>
+          <option value="premium">Премиальные</option><option value="soft">Мягкие и звучные</option>
+          <option value="tech">Технологичные</option><option value="random">Случайные редкие</option>
+        </select>
+        <div class="label-row"><label class="field-label" for="length">Длина ника</label><span class="value-pill" id="lengthValue">5–12</span></div>
+        <div class="range-row"><span>5</span><input id="length" type="range" min="5" max="20" value="12"><span>20</span></div>
+        <label class="field-label" for="keyword">Слово или идея <span class="optional">необязательно</span></label>
+        <input id="keyword" type="text" maxlength="18" placeholder="например, luna">
+        <div class="check-row"><input id="digits" type="checkbox"><label for="digits">Разрешить цифры</label></div>
+        <div class="check-row"><input id="underscore" type="checkbox"><label for="underscore">Разрешить подчёркивание</label></div>
+        <div class="divider"></div>
+        <div class="label-row"><label class="field-label">Количество вариантов</label><span class="value-pill">1000</span></div>
+        <button id="generate" class="primary-btn">✦ Сгенерировать 1000 ников</button>
+        <p class="hint">Генерация происходит прямо в браузере. Проверка Telegram выполняется отдельно.</p>
+      </aside>
+      <section class="panel results-panel">
+        <div class="results-head">
+          <div><span class="step">02</span><h2>Найденные имена</h2><p id="subhead">Подготовь подборку под свой стиль</p></div>
+          <button id="check" class="outline-btn" disabled>Проверить в Telegram ↗</button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span>Всего</span><strong id="total">0</strong></div>
+          <div class="stat"><span>Свободно</span><strong class="green" id="available">—</strong></div>
+          <div class="stat"><span>Занято</span><strong id="taken">—</strong></div>
+          <div class="stat"><span>Избранное</span><strong id="favoritesCount">0</strong></div>
+        </div>
+        <div class="toolbar">
+          <div class="tabs"><button class="tab active" data-filter="all">Все <span id="allCount">0</span></button><button class="tab" data-filter="available">Свободные</button><button class="tab" data-filter="favorites">Избранное</button></div>
+          <button id="copyAll" class="text-btn" disabled>Копировать список</button>
+        </div>
+        <div id="list" class="name-list"><div class="empty"><div class="empty-icon">✳</div><b>Здесь появятся твои варианты</b><span>Нажми «Сгенерировать», чтобы начать поиск</span></div></div>
+        <div class="list-footer"><span id="showing">0 результатов</span><span>Проверяй перед использованием</span></div>
+      </section>
+    </section>
+    <section class="note"><span class="note-icon">i</span><div><b>Как работает проверка?</b><p>Для точной проверки подключается твой Telegram-аккаунт через официальный MTProto API. Проверка доступности не резервирует имя: другой пользователь может занять его раньше. Обычные username имеют ограничения Telegram; короткие collectible usernames могут продаваться отдельно на Fragment.</p></div></section>
+  </main>
+  <footer><span>© 2026 name scout</span><span>Made for finding your @</span></footer>
+</div>
+<script src="/app.js"></script>
+</body></html>

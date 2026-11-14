@@ -1,0 +1,15 @@
+{
+  "name": "namescout-telegram-username-finder",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "telegram": "^2.26.22",
+    "dotenv": "^16.4.7",
+    "input": "^1.0.1"
+  }
+}
